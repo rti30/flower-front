@@ -1,6 +1,5 @@
 import { createStore } from 'vuex'
 import news from '@/store/news';
-
 import product from '@/store/product';
 import category from '@/store/category';
 import anyParams from '@/store/anyParams';
@@ -23,6 +22,6 @@ export default createStore({
       user,
    },
    strict: process.env.NODE_ENV !== 'production',
-});
+})
 
 

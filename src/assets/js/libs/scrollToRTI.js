@@ -45,7 +45,7 @@ export default function (animate) {
             }
         });
     }
-};
+}
 
 function makeEaseOut(timing) {
     return function (timeFraction) {

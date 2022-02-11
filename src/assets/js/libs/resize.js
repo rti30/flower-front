@@ -1,7 +1,7 @@
 
 export default function resize(element, callback) {
     let zIndex = parseInt(getComputedStyle(element));
-    if (isNaN(zIndex)) { zIndex = 0; };
+    if (isNaN(zIndex)) { zIndex = 0; }
     zIndex--;
 
     let expand = document.createElement('div');
@@ -49,7 +49,7 @@ export default function resize(element, callback) {
 
         shrink.scrollLeft = 10000000;
         shrink.scrollTop = 10000000;
-    };
+    }
     setScroll();
 
     let size = element.getBoundingClientRect();
@@ -75,4 +75,4 @@ export default function resize(element, callback) {
 
     expand.addEventListener('scroll', onScroll);
     shrink.addEventListener('scroll', onScroll);
-};
+}

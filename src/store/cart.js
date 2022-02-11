@@ -21,7 +21,7 @@ export default {
       cart: state => state.cart,
       has: state => id => state.cart.some(item => item.id === id),
       productsId: state => state.cart.map(product => product.id),
-      productsInfo(state, rootGetters) {
+      productsInfo(state, getters, rootState, rootGetters) {
          let cartInfo = [];
          state.cart.forEach((item) => {
             let info = rootGetters['product/product'](item.id);

@@ -1,7 +1,13 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import store from './store';
-let app = createApp(App).use(store);
+import router from './router'
+import VueLazyLoad from 'vue3-lazyload'
+
+let app = createApp(App).use(store).use(router).use(VueLazyLoad, {
+   loading: '',
+   error: '',
+});
 
 store.dispatch('user/auth')
 store.dispatch('cart/load');

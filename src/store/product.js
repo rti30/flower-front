@@ -5,7 +5,6 @@ export default {
    namespaced: true,
    state: {
       products: null,
-
    },
    getters: {
       products: state => state.products,
@@ -17,7 +16,7 @@ export default {
 
          return map;
       },
-      product: (state, getters) => state.products ? id => state.products[getters.productsMap[id]] : undefined,
+      product: (state, getters) => state.products ? id => state.products[getters.productsMap[id]] : () => undefined,
    },
    mutations: {
       addProducts(state, data) {

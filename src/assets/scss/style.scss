@@ -262,19 +262,88 @@ input[type="password"] {
 	}
 }
 .icon-font {
-	font-size: 100px;
-	&-search {
+	&__mastercard {
+		&:hover {
+			color: #eb001b;
+		}
 	}
-	&-location {
+
+	// .icon-font__visa
+
+	&__visa {
+		&:hover {
+			color: #1434cb;
+		}
 	}
-	&-like {
+
+	// .icon-font__mir
+
+	&__mir {
+		&:hover {
+			color: #0e754ecb;
+		}
 	}
-	&-cart {
+	&__vk {
+	}
+	&__insta {
+	}
+	&__whatsapp {
+	}
+	&__logo:before {
+		cursor: pointer;
+		border-radius: 50%;
+		font-size: calcSize(55, 70, $minWidth, $maxWidth);
+	}
+	&__cart {
+		&--count {
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: calcSize(12, 20, $minWidth, $maxWidth);
+			width: calcSize(15, 25, $minWidth, $maxWidth);
+			height: calcSize(15, 25, $minWidth, $maxWidth);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1;
+			background-color: $c-Dark;
+			border-radius: 50%;
+			transform: translate(0, -50%);
+		}
 	}
 }
 //*<Иконочный шрифт>===========================================================================================================================
 
 //*<Тайминги и условия анимации>================================================================================================================
+.anim-icon {
+	&:before {
+		transition: all 0.4s linear;
+	}
+	&:before:hover {
+		color: $c-Gray;
+	}
+	&--search {
+		&:hover {
+			color: $c-Gray;
+		}
+	}
+	&--logo {
+		&:hover:before {
+			transition: all 0.8s;
+			color: $c-Light;
+			background-color: $c-Dark;
+			text-shadow: 1px 1px 2px black, 0 0 1em rgb(255, 230, 0), 0 0 0.2em rgb(251, 255, 0);
+		}
+	}
+	&--title {
+		.font-icon {
+			transition: all 0.4s;
+			&:hover {
+				text-shadow: 1px 1px 2px black, 0 0 1em rgb(255, 230, 0), 0 0 0.2em rgb(251, 255, 0);
+			}
+		}
+	}
+}
 
 //*</ Тайминги и условия анимации>====================================================================================================
 .height-search-enter-active {

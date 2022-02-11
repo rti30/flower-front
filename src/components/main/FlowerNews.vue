@@ -1,5 +1,6 @@
 
 <template>
+  <!--  :autoplay="{ delay: 10000 }" -->
   <swiper
     effect="fade"
     grabCursor
@@ -47,12 +48,13 @@ export default {
     };
   },
   computed: {
+    //  ...mapGetters("anyParams", { apiUrl: "apiUrl" }),
     ...mapGetters("anyParams", { serverUrl: "serverUrl" }),
     ...mapGetters("news", { news: "news" }),
   },
   methods: {},
   mounted() {
-    const news = document.querySelector(".news-swiper");
+    const news = document.querySelector(".news");
     const prevNav = news.querySelector(".swiper-button-prev");
     const nextNav = news.querySelector(".swiper-button-next");
     prevNav.classList.add(
@@ -68,6 +70,7 @@ export default {
   },
 };
 </script>
+
 
 <style lang="scss">
 @import "swiper/swiper.scss";
@@ -119,11 +122,17 @@ export default {
   }
   &
     .swiper-pagination.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    //margin: 10px;
     position: absolute;
+    //z-index: 9999;
     padding-top: 5px;
     bottom: 0;
     right: 50%;
     transform: translate(-50%, 100%);
+    // transform: translate(-100%, -50%);
+    //bottom: calcSize(-5, -5, $minWidth, $maxWidth);
+    // bottom: calcSize(-7, -10, $minWidth, $maxWidth);
+    //bottom: -5px;
   }
   & .swiper-pagination-bullet {
     display: inline-block;
@@ -135,11 +144,19 @@ export default {
     &:not(:last-child) {
       margin: 0px calcSize(5, 10, $minWidth, $maxWidth) 0px 0px;
     }
+    &-active {
+    }
   }
 }
+
 .news-slide {
+  &__slide {
+  }
+
   &__image {
     height: calcSize(100, 250, $minWidth, $maxWidth);
   }
+}
+.img-object-fit {
 }
 </style>
