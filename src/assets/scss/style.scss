@@ -1,0 +1,357 @@
+//<МИКСИНЫ>===============================================================================================
+//! Перекочевали в файл в vue.config.js
+//</МИКСИНЫ>===============================================================================================
+@import "objectFit";
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import "fonts";
+
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+//! Перекочевали в файл _variables.scss в vue.config.js
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+//! Перекочевали в файл _variables.scss в vue.config.js
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+//* КОМПОНЕНТЫ
+@import "libs/nouislider.min.scss"; //!Верстать UI слайдер в этом файле отдельно
+//*
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	color: $c-Light;
+	background-color: $c-Dark;
+	font-size: 14px;
+	&.lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	//overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+.page {
+	flex: 1 1 auto;
+	& > * + * {
+		margin-bottom: calcSize(5, 15, $minWidth, $maxWidth);
+	}
+}
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.content-width {
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: calcSize(360, 1024, $minWidth, $maxWidth);
+	@media (min-width: $width1024+px) {
+		max-width: calcSize(1170, 1700, 1200, 2000);
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+//===================================================================================================================================
+
+//*<ЧАСТО ПОВТОРЯЮЩЕЕСЯ ЭЛЕМЕНТЫ>====================================================================================================
+a:link {
+	cursor: pointer;
+	transition: all 0.3s linear;
+	color: $c-Light;
+}
+
+a:visited {
+	color: $c-Light;
+}
+a:hover {
+	color: $c-Gray;
+	text-decoration: underline;
+}
+a:active {
+	color: $c-Gray;
+}
+//*</ПОВТОРЯЮЩЕЕСЯ ЭЛЕМЕНТЫ>====================================================================================================
+.title {
+	//	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: calcSize(10, 27, $minWidth, $maxWidth);
+	font-size: calcSize(13, 30, $minWidth, $maxWidth);
+	margin-bottom: calcSize(3, 10, $minWidth, $maxWidth);
+	cursor: pointer;
+	&--black {
+		color: $c-Dark;
+	}
+	&--gray {
+		color: $c-Gray;
+	}
+}
+
+.text {
+	font-size: calcSize(12, 25, $minWidth, $maxWidth);
+	line-height: calcSize(12, 28, $minWidth, $maxWidth);
+	&--black {
+		color: $c-Dark;
+		font-size: calcSize(12, 25, $minWidth, $maxWidth);
+		line-height: calcSize(12, 28, $minWidth, $maxWidth);
+	}
+	&--gray {
+		color: $c-Gray;
+		font-size: calcSize(12, 25, $minWidth, $maxWidth);
+		line-height: calcSize(12, 28, $minWidth, $maxWidth);
+	}
+}
+.text2 {
+	font-family: "Lato";
+	font-size: calcSize(12, 25, $minWidth, $maxWidth);
+	line-height: calcSize(10, 33, $minWidth, $maxWidth);
+	&--black {
+		color: $c-Dark;
+		font-size: calcSize(12, 25, $minWidth, $maxWidth);
+		line-height: calcSize(10, 33, $minWidth, $maxWidth);
+	}
+	&--gray {
+		color: $c-Gray;
+		font-size: calcSize(12, 25, $minWidth, $maxWidth);
+		line-height: calcSize(10, 33, $minWidth, $maxWidth);
+	}
+}
+.subtitle {
+	font-size: calcSize(13, 37, $minWidth, $maxWidth);
+	font-weight: 700;
+	margin-bottom: calcSize(12, 18, $minWidth, $maxWidth);
+	&--black {
+		color: $c-Dark;
+		font-size: calcSize(13, 37, $minWidth, $maxWidth);
+		font-weight: 700;
+		margin-bottom: calcSize(12, 18, $minWidth, $maxWidth);
+	}
+	&--gray {
+		color: $c-Gray;
+		font-size: calcSize(13, 37, $minWidth, $maxWidth);
+		font-weight: 700;
+		margin-bottom: calcSize(12, 18, $minWidth, $maxWidth);
+	}
+}
+.auxiliary {
+	font-size: calcSize(11, 24, $minWidth, $maxWidth);
+	line-height: calcSize(11, 24, $minWidth, $maxWidth);
+	color: $c-Gray;
+	&--white {
+		font-size: calcSize(11, 24, $minWidth, $maxWidth);
+		line-height: calcSize(11, 24, $minWidth, $maxWidth);
+		color: $c-Light;
+	}
+}
+.text-shadow {
+	text-shadow: -1px 0px 10px #c5ce57;
+}
+//*<UI ЭЛЕМЕНТЫ>================================================================================================================
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+	font-family: "Lato";
+	font-size: calcSize(12, 25, $minWidth, $maxWidth);
+	line-height: calcSize(10, 33, $minWidth, $maxWidth);
+}
+
+//*<UI ЭЛЕМЕНТЫ>================================================================================================================
+
+.button {
+	cursor: pointer;
+	background-color: $c-Gray;
+	border-radius: $main-border-radius;
+	display: flex;
+	align-items: center;
+	color: #ffffff;
+	justify-content: center;
+	&__text {
+		font-family: "Lato";
+		&--big {
+			font-size: calcSize(13, 37, $minWidth, $maxWidth);
+		}
+	}
+	&--promo {
+		text-decoration: none;
+		user-select: none;
+		padding: 0.5em 2em;
+		outline: none;
+		border: 2px solid;
+		border-radius: 1px;
+		transition: 0.2s;
+		&:hover {
+			background: rgb(0, 0, 0);
+		}
+		&:active {
+			background: rgb(0, 0, 0);
+		}
+		&:disabled {
+			color: $c-Gray;
+			background: rgb(89, 90, 89);
+			box-shadow: 0 3px rgb(89, 90, 89) inset;
+		}
+	}
+	&--go {
+		padding: 0.8em 1em calc(0.8em + 3px);
+		border-radius: 3px;
+		background: rgb(64, 199, 129);
+		box-shadow: 0 -3px rgb(53, 167, 110) inset;
+		transition: 0.2s;
+		&:hover {
+			background: rgb(53, 167, 110);
+		}
+		&:active {
+			background: rgb(33, 147, 90);
+			box-shadow: 0 3px rgb(33, 147, 90) inset;
+		}
+		&:disabled {
+			color: $c-Gray;
+			background: rgb(89, 90, 89);
+			box-shadow: 0 3px rgb(89, 90, 89) inset;
+		}
+	}
+}
+
+.input {
+	padding: 10px;
+	&--adressee {
+		border: 2px solid rgb(97, 97, 97);
+	}
+}
+//*</UI ЭЛЕМЕНТЫ>====================================================================================================
+
+//*<Иконочный шрифт>====================================================================================================
+//! В ЭТОМ ПРОЕКТЕ НЕ СОВСЕМ КОРРЕКТНО по метологии BEM НАЗВАЛ ИКОНОЧНЫЙ ШРИФТ, ПО ИТОГУ класса (B - "блока") icon-font как такого не существует
+//! есть только отдельные классы, а назвал их как E - "элементы" (типо icon-font__map, icon-font__profile м т.д.). Лучше было бы назвать icon-font--profile, и плюс на одном уровне был бы класс icon-font
+//! по этому на одном уровне введен другой класс, который называется font-icon, что может немного сбивать с толку схожестью названия, по хорошему его надо навешивать всем иконочным шрфтам
+//! и использовать общие стили
+.font-icon {
+	cursor: pointer;
+	transition: 0.4s linear;
+	&:before {
+		font-size: calcSize(25, 50, $minWidth, $maxWidth);
+	}
+}
+.icon-font {
+	font-size: 100px;
+	&-search {
+	}
+	&-location {
+	}
+	&-like {
+	}
+	&-cart {
+	}
+}
+//*<Иконочный шрифт>===========================================================================================================================
+
+//*<Тайминги и условия анимации>================================================================================================================
+
+//*</ Тайминги и условия анимации>====================================================================================================
+.height-search-enter-active {
+	animation: heightIn 0.7s;
+}
+
+.height-search-leave-active {
+	animation: heightOut 0.7s;
+}
+
+@keyframes heightIn {
+	from {
+		height: 0;
+	}
+	to {
+		height: calcSize(35, 65, $minWidth, $maxWidth);
+	}
+}
+
+@keyframes heightOut {
+	from {
+		height: calcSize(35, 65, $minWidth, $maxWidth);
+	}
+	to {
+		height: 0;
+	}
+}
+//*=======================================================
+.spoiler-enter-active {
+	animation: animSpilerIn 0.7s;
+}
+
+.spoiler-leave-active {
+	animation: animSpilerOut 0.7s;
+}
+
+@keyframes animSpilerIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes animSpilerOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+//*==========================================================
+.anim-page-enter-active {
+	animation: pageIn 0.7s;
+}
+
+.anim-page-leave-active {
+	animation: pageOut 0.7s;
+}
+
+@keyframes pageIn {
+	from {
+		transform: rotateX(90deg);
+	}
+	to {
+		transform: rotateX(0deg);
+	}
+}
+
+@keyframes pageOut {
+	from {
+		transform: rotateX(0deg);
+	}
+	to {
+		transform: rotateX(90deg);
+	}
+}
+//*==========================================================

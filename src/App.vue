@@ -1,17 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <flower-news />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import { mapActions } from "vuex";
+import FlowerNews from "@/components/main/FlowerNews.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    FlowerNews,
+  },
+  data() {
+    return {
+      news: null,
+    };
+  },
+  mounted() {},
+  methods: {},
+};
 </script>
 
 <style>

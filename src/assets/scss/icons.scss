@@ -1,0 +1,83 @@
+@font-face {
+	font-family: "icons";
+	font-display: swap;
+	src: url("../fonts/icons.ttf?2ipmvh") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-font__"],
+[class*=" icon-font__"] {
+	&:before {
+		@extend %ic;
+		display: inline-block;
+	}
+}
+.icon-font__mastercard:before {
+	content: "\e90f";
+}
+.icon-font__visa:before {
+	content: "\e912";
+}
+.icon-font__mir:before {
+	content: "\e913";
+}
+.icon-font__arrows:before {
+	content: "\e90e";
+}
+.icon-font__arrow:before {
+	content: "\e90d";
+}
+.icon-font__logo:before {
+	content: "\e90c";
+}
+.icon-font__empty-cart:before {
+	content: "\e90b";
+}
+.icon-font__delete:before {
+	content: "\e908";
+}
+.icon-font__like:before {
+	content: "\e909";
+}
+.icon-font__cart:before {
+	content: "\e90a";
+}
+.icon-font__profile:before {
+	content: "\e907";
+}
+.icon-font__letter:before {
+	content: "\e900";
+}
+.icon-font__map:before {
+	content: "\e901";
+}
+.icon-font__phone:before {
+	content: "\e902";
+}
+.icon-font__insta:before {
+	content: "\e903";
+}
+.icon-font__vk:before {
+	content: "\e904";
+}
+.icon-font__whatsapp:before {
+	content: "\e905";
+}
+.icon-font__clock:before {
+	content: "\e906";
+}
+.icon-font__search:before {
+	content: "\e986";
+}
