@@ -67,7 +67,6 @@ export default {
 
 		catch (e) {
 			console.log("Зашли?");
-			console.log('!!!!!!!!!!!!!!!!!!!!', e);
 			const { serverMessege } = await interceptor.error({ ok: false, body: e, status: 'NoConnect' });
 			return { ok: false, body: e, status: 'NoConnect', serverMessege };
 		}

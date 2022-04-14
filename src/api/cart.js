@@ -105,7 +105,6 @@ export default server => ({
 	},
 	async buy(orderId) {
 		console.log("Покупка", orderId);
-		console.log("2222222222222222 API", orderId);
 		const url = '/order';
 		const options = {
 			method: "POST",

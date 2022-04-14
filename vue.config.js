@@ -1,10 +1,11 @@
 // vue.config.js
 module.exports = {
-
    publicPath: process.env.NODE_ENV === 'production'
-      ? ''
+      ? '/flower-demo/'
       : '/'
    ,
+   filenameHashing: process.env.NODE_ENV === 'production' ? false : true,
+   productionSourceMap: process.env.NODE_ENV === 'production' ? false : true,
    css: {
       loaderOptions: {
          // передача настроек в sass-loader

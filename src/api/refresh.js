@@ -3,7 +3,6 @@ import fingerPrint2 from '@/api/fingerPrint.js'
 import { setTokens, getJWTPayload, } from '@/api/token.js';
 
 export default async function refresh(url, options = {}, server, store) {
-   console.log('3333333333333333333333333333333', store);
    if (refreshPromise === null) {
       const fingerPrint = (await fingerPrint2).deviceId;
       refreshPromise = server('/user/refreshToken', {
